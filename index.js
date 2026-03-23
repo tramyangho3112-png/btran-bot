@@ -23,7 +23,7 @@ const client = new Client({
 
 console.log("--- Bắt đầu Login ---");
 
-client.login(process.env.DISCORD_TOKEN)
+client.login(process.env.TOKEN)
     .then(() => {
         console.log(`✅ Bot đã Online: ${client.user.tag}`);
     })

@@ -1,17 +1,4 @@
-console.log("--- Bắt đầu Login ---");
 
-client.login(process.env.DISCORD_TOKEN)
-    .then(() => {
-        console.log(`✅ Bot đã Online: ${client.user.tag}`);
-    })
-    .catch(err => {
-        console.error("❌ LỖI RỒI:");
-        console.error(err); // Dòng này sẽ hiện chi tiết lỗi là gì
-    });
-
-// Thêm cái này để debug thêm
-client.on('error', console.error);
-client.on('warn', console.warn);
 const {
   Client,
   GatewayIntentBits,
@@ -33,6 +20,17 @@ const client = new Client({
     GatewayIntentBits.GuildMembers
   ]
 });
+
+console.log("--- Bắt đầu Login ---");
+
+client.login(process.env.DISCORD_TOKEN)
+    .then(() => {
+        console.log(`✅ Bot đã Online: ${client.user.tag}`);
+    })
+    .catch(err => {
+        console.error("❌ LỖI RỒI:");
+        console.error(err); // Dòng này sẽ hiện chi tiết lỗi là gì
+    });
 
 // ================= CONFIG =================
 const TOKEN = process.env.TOKEN;

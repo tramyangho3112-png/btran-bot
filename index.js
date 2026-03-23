@@ -1,6 +1,17 @@
-console.log("=== app starting ===");
-console.log("TOKEN exists:", !!process.env.TOKEN);
-console.log("Node is running");
+console.log("--- Bắt đầu Login ---");
+
+client.login(process.env.DISCORD_TOKEN)
+    .then(() => {
+        console.log(`✅ Bot đã Online: ${client.user.tag}`);
+    })
+    .catch(err => {
+        console.error("❌ LỖI RỒI:");
+        console.error(err); // Dòng này sẽ hiện chi tiết lỗi là gì
+    });
+
+// Thêm cái này để debug thêm
+client.on('error', console.error);
+client.on('warn', console.warn);
 const {
   Client,
   GatewayIntentBits,

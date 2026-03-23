@@ -1114,3 +1114,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Web server running on port ${PORT}`);
 });
+console.log("Đang tiến hành kết nối tới Discord...");
+client.login(process.env.DISCORD_TOKEN).catch(err => {
+    console.error("Lỗi Login rồi đại vương ơi: " + err);
+});

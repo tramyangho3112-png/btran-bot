@@ -1,3 +1,6 @@
+console.log("=== app starting ===");
+console.log("TOKEN exists:", !!process.env.TOKEN);
+console.log("Node is running");
 const {
   Client,
   GatewayIntentBits,
